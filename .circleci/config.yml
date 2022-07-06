@@ -32,6 +32,8 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
+      - sonar-scanner -Dsonar.projectKey=develop
+      - sonar-scanner -Dsonar.organization=develop
       - checkout
       - sonarcloud/scan
       # You must define the following mandatory properties for 'Unknown': sonar.projectKey, sonar.organization
