@@ -33,8 +33,10 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-      #- sonarcloud/scan
-      - snyk/scan
+      - sonarcloud/scan
+      # You must define the following mandatory properties for 'Unknown': sonar.projectKey, sonar.organization
+      # - snyk/scan
+      # Snyk is missing auth token in order to run inside CI. You must include your API token as an environment value: `SNYK_TOKEN=12345678`
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
