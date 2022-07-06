@@ -34,7 +34,6 @@ jobs:
     steps:
       - checkout
       # - sonarcloud/scan
-      - run: export SNYK_TOKEN=26c85a6c-6075-41ee-9c2a-6bdb61aa90b1
       - snyk/scan
       # Snyk is missing auth token in order to run inside CI. You must include your API token as an environment value: `SNYK_TOKEN=26c85a6c-6075-41ee-9c2a-6bdb61aa90b1`
       - python/install-packages:
