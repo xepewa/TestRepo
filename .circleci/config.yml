@@ -10,7 +10,7 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.5.0
-  sonarcloud: sonarsource/sonarcloud@1.1.1
+  codecov: codecov/codecov@3.1.1
   snyk: snyk/snyk@1.1.2
  
 #
@@ -37,7 +37,7 @@ jobs:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
-      - sonarcloud/scan
+      - codecov/upload
       - snyk/scan
       - run:
           name: Run tests
