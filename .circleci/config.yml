@@ -31,8 +31,6 @@ jobs:
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
-    environment:
-       SONAR_SCANNER_OPTS: -Xdebug
     steps:
       - checkout
       - python/install-packages:
@@ -45,7 +43,6 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: pytest
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
