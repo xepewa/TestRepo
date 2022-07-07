@@ -32,7 +32,7 @@ jobs:
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     environment:
-       SONAR_SCANNER_OPTS: --stacktrace
+       SONAR_SCANNER_OPTS: -X
     steps:
       - checkout
       - python/install-packages:
